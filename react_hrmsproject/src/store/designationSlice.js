@@ -37,19 +37,11 @@ export const updateDesignation = createAsyncThunk(
   'designations/updateDesignation',
   async ({ data }) => {
     console.log(data, "designation update data");
-    const response = await updateDesignationDetails(data); // Use your existing API function
+    const response = await updateDesignationDetails(data); 
     console.log(response, "thunk");
     return response;
   }
 );
-
-// export const fetchDesignationDetails = createAsyncThunk(
-//   "designations/fetchDesignationDetails",
-//   async (designationId) => {
-//     const response = await getDesignationDetails(designationId);
-//     return response;
-//   }
-// );
 
 const designationSlice = createSlice({
   name: "designations",
@@ -94,21 +86,5 @@ const designationSlice = createSlice({
       });
   },
 });
-
-
-//       .addCase(fetchDesignationDetails.pending, (state) => {
-//         state.detailsStatus = "loading";
-//       })
-//       .addCase(fetchDesignationDetails.fulfilled, (state, action) => {
-//         state.detailsStatus = "succeeded";
-//         state.designationDetails = action.payload;
-//       })
-//       .addCase(fetchDesignationDetails.rejected, (state, action) => {
-//         state.detailsStatus = "failed";
-//         state.detailsError = action.error.message;
-//       });
-//   },
-// });
-
 
 export default designationSlice.reducer;

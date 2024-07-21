@@ -49,15 +49,6 @@ export const updateEmployee = createAsyncThunk(
 );
 
 
-// export const deleteEmployee = createAsyncThunk(
-//   'employees/deleteEmployee',
-//   async (employeeId) => {
-//     await deleteEmployee(employeeId);
-//     return employeeId; // Return employeeId to handle state removal if needed
-//   }
-// );
-
-
 const employeeSlice = createSlice({
   name: "employees",
   initialState,
@@ -81,7 +72,6 @@ const employeeSlice = createSlice({
       .addCase(addEmployee.fulfilled, (state, action) => {
         state.status = "succeeded";
         console.log("Payload at case, ", action.payload);
-        // state.employees.push(action.payload);
       })
       .addCase(addEmployee.rejected, (state, action) => {
         state.status = "failed";

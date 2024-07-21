@@ -39,11 +39,6 @@ const EmployeeListing = () => {
   const [openUpdateModal, setOpenUpdateModal] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
 
-  // const DesignationData = useSelector((state)=>state.designations.data)
-
-  // const designations = useSelector((state) => state.designations.designations);
-  // console.log(designations,"des page list")
-
   useEffect(() => {
     dispatch(fetchEmployees());
     dispatch(fetchDesignations());
