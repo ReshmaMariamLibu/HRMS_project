@@ -36,7 +36,7 @@ The HRMS (Human Resource Management System) is a web application designed to str
 
 `git clone https://github.com/ReshmaMariamLibu/HRMS_project.git`
 
-  ### Create new databse 
+  ### Create new database 
 
      set databse name on the models.py and app.py
 
