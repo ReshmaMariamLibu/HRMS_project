@@ -119,30 +119,6 @@ const UpdateEmployeeModal = ({ open, onClose, employee }) => {
             </Select>
           </FormControl>
           {designation.title}
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Max Casual Leave"
-            name="max_casual_leave"
-            value={formData.max_casual_leave || ""}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Max Sick Leaves"
-            name="max_sick_leaves"
-            value={formData.max_sick_leaves || ""}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="normal"
-            label="Leaves Taken"
-            name="leaves_taken"
-            value={formData.leaves_taken || ""}
-            onChange={handleChange}
-          />
           <Box
             sx={{ display: "flex", justifyContent: "center", mt: 2, gap: 4 }}
           >

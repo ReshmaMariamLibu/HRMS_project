@@ -23,7 +23,6 @@ const MainContent = () => {
 
   return (
     <>
-      {/* Conditionally render Navbar */}
       {location.pathname !== "/" && <Sidebar />}
       <Box
         component="main"
