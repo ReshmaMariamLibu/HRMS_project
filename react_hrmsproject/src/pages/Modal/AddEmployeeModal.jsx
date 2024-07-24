@@ -163,7 +163,7 @@ const AddEmployeeModal = ({ open, handleClose }) => {
               Designation not in the list ..?{" "}
               <span onClick={() => setIsCustomDesignation(true)}>
                 <u>click here</u>
-              </span>
+              </span> {" "}
             </p>
           </FormControl>
           {isCustomDesignation && (
@@ -196,3 +196,8 @@ const AddEmployeeModal = ({ open, handleClose }) => {
 };
 
 export default AddEmployeeModal;
+
+
+
+
+

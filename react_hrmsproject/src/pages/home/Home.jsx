@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Container, Typography, Box, Button, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import LoginModal from "../Modal/LoginModal";
@@ -26,6 +26,7 @@ const Home = () => {
   const [openRegisterModal, setOpenRegisterModal] = useState(false);
   const navigate = useNavigate();
   const scrollRef = useRef(null);
+  const imageIndexRef = useRef(0);
 
   const handleOpenLoginModal = () => {
     setOpenLoginModal(true);
@@ -58,6 +59,19 @@ const Home = () => {
       scrollRef.current.scrollBy({ left: 600, behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        imageIndexRef.current = (imageIndexRef.current + 1) % images.length;
+        scrollRef.current.scrollTo({
+          left: scrollRef.current.clientWidth * imageIndexRef.current,
+          behavior: "smooth",
+        });
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Box
